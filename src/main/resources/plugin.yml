@@ -1,0 +1,5 @@
+name: MetaCloud-Test-Plugin
+version: 1.0.0
+author: MetaCloud-Team
+description: MetaCloud Test Plugin
+main: eu.metacloudservice.MetaCloudPlugin

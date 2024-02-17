@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'eu.metacloudservice'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    //Maven Central
+    mavenCentral()
+
+    //MetaCloudService Repository
+    maven {
+        name "metacloudserviceReleases"
+        url "https://repo.metacloudservice.eu/releases"
+    }
+
+    //Paper API Repository
+    maven {
+        url "https://repo.papermc.io/repository/maven-public/"
+    }
+}
+
+dependencies {
+    //Paper API
+    compileOnly 'io.papermc.paper:paper-api:1.20.2-R0.1-SNAPSHOT'
+
+    //MetaCloudService
+    implementation "eu.metacloudservice:metacloud-api:1.0.2" //e.g. 1.0.2
+    implementation "eu.metacloudservice:metacloud-plugin:1.0.2"
+    implementation "eu.metacloudservice:metacloud-permission:1.0.2"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 17
+}
